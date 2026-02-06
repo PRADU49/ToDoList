@@ -68,4 +68,4 @@ rset.addEventListener("click", () => {
 });
 
 // Initial render on page load
-renderTodos();
+renderTodos(); 
