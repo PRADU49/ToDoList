@@ -25,4 +25,4 @@ https://pradu49.github.io/ToDoList/
 ## How to Run
 1. Clone or download the repository  
 2. Open `index.html` in your browser  
-3. Start managing your tasks 🚀
+3. Start managing your tasks 🚀 

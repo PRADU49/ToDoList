@@ -5,50 +5,51 @@
 }
 
 body {
-    height: 100vh;
-    background:#000;
+    min-height: 100vh;
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 
+/* MAIN CONTAINER */
+
 .container {
-    padding: 10px;
-    height: 540px;
-    width: 540px;
+    padding: 15px;
+    width: 100%;
+    max-width: 540px;
     border: 4px solid;
     border-radius: 17px;
     backdrop-filter: blur(4px);
-    justify-items: center;
     text-align: center;
-    color: aliceblue;
-    display: grid;
-    grid-template-rows: 40px, 1fr;
     color: antiquewhite;
+
+    display: grid;
+    gap: 15px;
 }
 
-.container .listBox {
-    padding: 20px;
-    height: 350px;
-    width: 400px;
-    border: 4px solid;
-    border-radius: 17px;
-    backdrop-filter: blur(10px);
-    display: grid;
-    text-align: start;
-    overflow: scroll;
-    font-size: x-large;
+/* INPUT SECTION */
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
+
+/* INPUT */
 
 #input {
     padding: 8px;
-    height: 5vh;
-    width: 240px;
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 17px;
     color: antiquewhite;
     background: #000;
     box-shadow: -2px 2px;
-    border: #000;
+    border: none;
 }
 
 #input:focus{
@@ -56,10 +57,13 @@ body {
     outline: none;
 }
 
-#addBtn, #rset {
-    padding: 4px;
-    height: 5vh;
-    width: 8vw;
+/* BUTTONS */
+
+#addBtn, 
+#rset {
+    padding: 6px;
+    height: 40px;
+    width: 180px;
     border-radius: 17px;
     background: #000;
     color: antiquewhite;
@@ -68,23 +72,50 @@ body {
     border: 1px solid antiquewhite;
 }
 
-#addBtn:active, #rset:active{
+#addBtn:active, 
+#rset:active{
     background: #676354;
 }
+
+/* LIST BOX */
+
+.container .listBox {
+    padding: 20px;
+    width: 100%;
+    max-height: 350px;
+    border: 4px solid;
+    border-radius: 17px;
+    backdrop-filter: blur(10px);
+    display: grid;
+    text-align: start;
+    overflow-y: auto;
+    font-size: x-large;
+}
+
+/* LIST */
 
 .listBox ul {
     list-style: none;
 }
 
-input:checked+label {
+li{
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* CHECKED TASK */
+
+input:checked + label {
     text-decoration: line-through;
 }
 
+/* DELETE BUTTON */
+
 li button{
-    position: fixed;
-    left: 320px;
-    height: 5vh;
-    padding: 8px;
+    height: 35px;
+    padding: 6px 10px;
     border: none;
     border-radius: 17px;
     background: rgba(255, 255, 255, 0.139);
@@ -94,6 +125,21 @@ li button{
     cursor: pointer;
 }
 
-li{
-    margin-bottom: 17px;
-} 
+/* MOBILE */
+
+@media (max-width: 600px){
+
+    #input{
+        max-width: 100%;
+    }
+
+    #addBtn,
+    #rset{
+        width: 100%;
+    }
+
+    .listBox{
+        font-size: 1rem;
+    }
+
+}
